@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"os"
 )
@@ -14,4 +15,12 @@ func main() {
 
 	fmt.Println("Successfully opened the CSV file")
 	defer getProblems.Close()
+
+	// read CSV file
+	fileReader := csv.NewReader(getProblems)
+	records, getError := fileReader.ReadAll()
+	if getError != nil {
+		fmt.Println(getError)
+	}
+	fmt.Println(records)
 }
