@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func main() {
+func mainy() {
 	// Define flags for the CSV file and timer
 	csvFileName := flag.String("csv", "problems.csv", "a CSV file in the format of 'question,answer'")
 	timeLimit := flag.Int("limit", 30, "the time limit for the quiz in seconds")
